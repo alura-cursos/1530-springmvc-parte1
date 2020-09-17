@@ -4,6 +4,21 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	</head>
 	<body>
 		<div class="container">
+		
+			<div class="jumbotron mb-0">
+				<h1 class="display-4">Meus Pedidos</h1>
+			</div>
+		
+			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="">Todos</a>
+					<a class="nav-item nav-link" href="">Aguardando</a>
+					<a class="nav-item nav-link" href="">Aprovado</a>
+					<a class="nav-item nav-link" href="">Entregue</a>
+				</div>
+				<a href="/pedido/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+			</nav>
+		
 			<div class="card" th:each="pedido : ${pedidos}">
 				<div class="card-header" th:text="${pedido.nomeProduto}">Nome do Produto</div>
 				<div class="card-body">
