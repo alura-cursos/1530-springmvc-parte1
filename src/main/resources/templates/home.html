@@ -1,29 +1,10 @@
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	
-		<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-		<style>
-			.logo-container {
-				background-color: #47bcff;
-				color: #FFF;
-			}
-			.logo {
-				font-family: 'Handlee', cursive;
-				font-size: 2.5rem;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="logo-container mb-3 p-3 d-flex justify-content-between">
-			<span class="logo">mudi</span>
-			<span class="mt-3">login</span>
-		</div>	
+	<head th:replace="~{base :: head}"></head>
+	<body>	
+		<div th:replace="~{base :: logo}"></div>
 
 		<div class="container">
-			<div class="jumbotron mb-0">
-				<h1 class="display-4">Meus Pedidos</h1>
-			</div>
+			<div th:replace="~{base :: titulo('Meus Pedidos')}"></div>
 		
 			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
 				<div class="navbar-nav">
