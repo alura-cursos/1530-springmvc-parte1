@@ -8,7 +8,7 @@
 		
 			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
 				<div class="navbar-nav">
-					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" href="">Todos</a>
+					<a th:classappend="${status} == null ? 'active'" class="nav-item nav-link" href="/home">Todos</a>
 					<a th:classappend="${status} == 'aguardando' ? 'active'" class="nav-item nav-link" href="/home/aguardando">Aguardando</a>
 					<a th:classappend="${status} == 'aprovado' ? 'active'" class="nav-item nav-link" href="/home/aprovado">Aprovado</a>
 					<a th:classappend="${status} == 'entregue' ? 'active'" class="nav-item nav-link" href="/home/entregue">Entregue</a>
@@ -28,8 +28,8 @@
 					<div class="row">
 						<div class="col-12 col-sm-8 mb-3">
 							<div class="row ">
-								<div class="col-md-5">Valor: <span th:text="${pedido.valorNegociado}">200,99</span></div>
-								<div class="col-md-6">Data da entrega: <span th:text="${pedido.dataDaEntrega}">10/02/2020</span></div>
+								<div class="col-md-5">Valor: <span th:if="${pedido.valorNegociado} != null" th:text="${'R$ ' + #numbers.formatDecimal(pedido.valorNegociado, 3, 'POINT', 2, 'COMMA')}">200,99</span></div>
+								<div class="col-md-6">Data da entrega: <span th:text="${#temporals.format(pedido.dataDaEntrega, 'dd/MM/yyyy')}">10/02/2020</span></div>
 							</div>
 							
 							<div>Produto</div> 
