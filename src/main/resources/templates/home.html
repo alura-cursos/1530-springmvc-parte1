@@ -1,10 +1,26 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	</head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	
+		<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+		<style>
+			.logo-container {
+				background-color: #47bcff;
+				color: #FFF;
+			}
+			.logo {
+				font-family: 'Handlee', cursive;
+				font-size: 2.5rem;
+			}
+		</style>
+	</head>
 	<body>
+		<div class="logo-container mb-3 p-3 d-flex justify-content-between">
+			<span class="logo">mudi</span>
+			<span class="mt-3">login</span>
+		</div>	
+
 		<div class="container">
-		
 			<div class="jumbotron mb-0">
 				<h1 class="display-4">Meus Pedidos</h1>
 			</div>
@@ -19,7 +35,7 @@
 				<a href="/pedido/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
 			</nav>
 		
-			<div class="card" th:each="pedido : ${pedidos}">
+			<div class="card mb-3" th:each="pedido : ${pedidos}">
 				<div class="card-header" th:text="${pedido.nomeProduto}">Nome do Produto</div>
 				<div class="card-body">
 					<div class="row">
